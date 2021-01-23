@@ -1,3 +1,5 @@
+const { collection } = require("./data");
+
 function iterateTree(collection, callback) {
   if (collection === null || collection === undefined) {
     return;
@@ -21,23 +23,6 @@ const filter = (val) => {
   if (val > 4) {
     valuesArray.push(val);
   }
-};
-
-const collection = {
-  nodeValue: 7,
-  left: {
-    nodeValue: 4,
-    left: 2,
-    right: {
-      nodeValue: 6,
-      left: 5,
-      right: 9,
-    },
-  },
-  right: {
-    nodeValue: 9,
-    left: 8,
-  },
 };
 
 let valuesArray = [];

@@ -1,3 +1,5 @@
+// const { numberValues, objectsWithValues } = require("./data");
+
 function CompositeCollection() {
   this.length = 0;
 }
@@ -27,15 +29,6 @@ CompositeCollection.prototype.increment = function (number) {
 CompositeCollection.prototype.getValues = function () {
   return Object.values(this);
 };
-
-const numberValues = [2, 5, 8];
-
-const objectsWithValues = [
-  { value: 7 },
-  { value: 4 },
-  { value: 6 },
-  { value: 9 },
-];
 
 // 1st example
 let valuesComposition = new CompositeCollection();
