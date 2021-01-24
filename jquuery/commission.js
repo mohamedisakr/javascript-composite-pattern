@@ -18,23 +18,23 @@ function calculateCommission(sales) {
   }
 }
 
-// 1st failed case ==>> [PASSED]
-// $1100.00 $115.00 $100.00 Fail $15.00
-let expected = 115;
-let actual = calculateCommission(1100);
-console.log(expected === actual);
+// // 1st failed case ==>> [PASSED]
+// // $1100.00 $115.00 $100.00 Fail $15.00
+// let expected = 115;
+// let actual = calculateCommission(1100);
+// console.log(expected === actual);
 
-// 2nd failed case ==>> [PASSED]
-// $1700.00 $205.00 $190.00 Fail $15.00
-expected = 205;
-actual = calculateCommission(1700);
-console.log(expected === actual);
+// // 2nd failed case ==>> [PASSED]
+// // $1700.00 $205.00 $190.00 Fail $15.00
+// expected = 205;
+// actual = calculateCommission(1700);
+// console.log(expected === actual);
 
-// 3rd failed case ==>> [PASSED]
-// $1800.00 $220.00 $205.00 Fail $15.00
-expected = 220;
-actual = calculateCommission(1800);
-console.log(expected === actual);
+// // 3rd failed case ==>> [PASSED]
+// // $1800.00 $220.00 $205.00 Fail $15.00
+// expected = 220;
+// actual = calculateCommission(1800);
+// console.log(expected === actual);
 
 // 4th failed case ==>> [PASSED]
 // $1900.00 $240.00 $260.00 Fail –$20.00
@@ -42,8 +42,8 @@ expected = 240;
 actual = calculateCommission(1900);
 console.log(expected === actual);
 
-// 5th failed case ==>> [PASSED]
-// $1005.00 $100.75 $85.75 Fail $15.00
-expected = 100.75;
-actual = calculateCommission(1005);
-console.log(expected === actual);
+// // 5th failed case ==>> [PASSED]
+// // $1005.00 $100.75 $85.75 Fail $15.00
+// expected = 100.75;
+// actual = calculateCommission(1005);
+// console.log(expected === actual);
