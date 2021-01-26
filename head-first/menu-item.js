@@ -31,10 +31,10 @@ class MenuItem {
 
 module.exports = MenuItem;
 
-let myMenuItem = new MenuItem(
-  "K&B's Pancake Breakfast",
-  "Pancakes with scrambled eggs and toast",
-  true,
-  2.99
-);
-console.log(myMenuItem.getName);
+// let myMenuItem = new MenuItem(
+//   "K&B's Pancake Breakfast",
+//   "Pancakes with scrambled eggs and toast",
+//   true,
+//   2.99
+// );
+// console.log(myMenuItem.getName);
