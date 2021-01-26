@@ -30,14 +30,40 @@ CompositeCollection.prototype.getValues = function () {
   return Object.values(this);
 };
 
-CompositeCollection.prototype.iterate = function () {
-  let iterator = this[Symbol.iterator]();
-  for (let result = iterator.next(); !result.done; result = iterator.next()) {
-    console.log(result.value); // result.value == 99
-  }
-};
+// CompositeCollection.prototype.iterate = function* () {
+//   console.log(`this : ${this}`);
+//   let iterator = this[Symbol.iterator]();
+//   console.log(`iterator ${iterator}`);
+//   for (let result = iterator.next(); !result.done; result = iterator.next()) {
+//     console.log(result); // result.value == 99
+//   }
+// };
 
 // TODO: implement iterator here
+CompositeCollection.prototype[Symbol.iterator] = function () {
+  // The iterator should return an Iterator object
+  return {
+    // The Iterator object must implement a method, next()
+    next: function () {
+      // next must itself return an IteratorResult object
+      if (!this.iterated) {
+        this.iterated = true;
+        // The IteratorResult object has two properties
+        return {
+          // whether the iteration is complete, and
+          done: false,
+          // the value of the current iteration
+          value: this[this.length++],
+        };
+      }
+      return {
+        // When iteration is complete, just the done property is needed
+        done: true,
+      };
+    },
+    iterated: false,
+  };
+};
 
 // ================== examples ================
 
@@ -45,7 +71,12 @@ CompositeCollection.prototype.iterate = function () {
 let valuesComposition = new CompositeCollection();
 valuesComposition.append(1).append(2).append({ value: 3 }).increment(2);
 // console.log(valuesComposition.getValues());
-valuesComposition.iterate();
+// valuesComposition.iterate();
+// let iterator = valuesComposition[Symbol.iterator]();
+// // let iter = list[Symbol.iterator]();
+for (let item of valuesComposition) {
+  console.log(item);
+}
 
 // // 2nd example
 // let MyComposite = new CompositeCollection();
